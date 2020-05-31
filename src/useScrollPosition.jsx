@@ -42,10 +42,10 @@ export function useScrollPosition(effect, deps, element, useWindow, wait) {
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('wheel', handleScroll)
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('wheel', handleScroll);
       throttleTimeout && clearTimeout(throttleTimeout);
     }
   }, deps)
